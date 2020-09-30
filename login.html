@@ -1,0 +1,67 @@
+
+<html>
+<head>
+  <title>Restaurant</title>
+  <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="rest-style.css"> 
+<script type="text/javascript">
+  function ValidateForm() {
+    var p1 = document.forms["loginform"]["psw"].value;
+    var re = /^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+    if(!p1.match(re)) {
+      alert("Password is too weak. Must be of length 8 including at least one alphabet, one digit, and one special character!");
+      return false;
+    }
+  }
+</script>
+</head>
+<body class="bgcolor">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header bg-light">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="rest.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="bookasguest.html">Book Table as Guest</a></li>
+        <li><a href="login.html">Log In</a></li>
+    </ul>
+  </div>
+</nav>
+    <div class="header">
+      <img src="media/chef's kiss gif.gif" class="gif1">
+      <img src="media/chef's kiss gif.gif" class="gif2">
+
+    <h1 class="h1">poo da</h1>
+    <h1 class="h2">k - dhaba</h1>
+  </div>
+  <div>
+    <h1 style="text-align: center;">Login:</h1>
+  </div>
+  <div style="padding-left: 300px; padding-right: 300px;  padding-top: 20px; font-size: 20px;">
+    <form name="loginform" action="action_page.php" onsubmit="ValidateForm()" method="post">
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+    <br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <br>
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+</form>
+<p style="text-align: center;"><a href="register.html">Click here to register!</a></p>
+  </div>
+
+  <footer>
+        <p> IG:@poodakdhaba<br>
+         <a href="mailto:poodakdhaba@gmail.com">poodakdhaba@gmail.com</a></p>
+    </footer>
+</body>
+</html>

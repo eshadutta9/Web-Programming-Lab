@@ -1,0 +1,117 @@
+<html>
+<head>
+  <title>Restaurant</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+  <link rel="stylesheet" type="text/css" href="rest-style.css">
+<script type="text/javascript">
+function ValidateForm() {
+
+  //Check Name
+  var n = document.forms["registerform"]["uname"].value;
+  if (n == "") {
+    alert("Name must be filled out!");
+    return false;
+  }
+
+  //Check Date
+  var d = document.forms["registerform"]["date"].value;
+  re_date = /^[0-3]?[0-9]\/[01]?[0-9]\/[0-9][0-9]$/;
+  if(!d.match(re_date)) {
+    alert("Invalid Date!");
+    return false;
+  }
+
+  //Check Time
+  var t = document.forms["registerform"]["time"].value;
+  re_time = /^[0-9]?[0-9]:[0-9]?[0-9]$/;
+  if(!t.match(re_time)) {
+    alert("Invalid Time!");
+    return false;
+  }
+
+  var e = document.forms["registerform"]["email"].value;
+  re_email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if(!e.match(re_email)) {
+    alert("Invalid E-mail ID!");
+    return false;
+  }
+
+  var ph = document.forms["registerform"]["phone"].value;
+  re_phone = /^[0-9]{10}$/;
+  if(!ph.match(re_phone)) {
+    alert("Invalid Phone Number");
+    return false;
+  }
+
+  location.href = 'rest.html';
+}
+</script>
+</head>
+<body class="bgcolor">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header bg-light">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="rest.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="bookasguest.html">Book Table as Guest</a></li>
+        <li><a href="login.html">Log In</a></li>
+    </ul>
+  </div>
+</nav>
+    <div class="header">
+      <img src="media/chef's kiss gif.gif" class="gif1">
+      <img src="media/chef's kiss gif.gif" class="gif2">
+
+    <h1 class="h1">poo da</h1>
+    <h1 class="h2">k - dhaba</h1>
+  </div>
+  <div>
+    <h1 style="text-align: center;">Book a table as a guest:</h1>
+    <p style="text-align: center;"> Request a booking and we'll e-mail/text you the confirmation within 24 hours</p>
+  </div>
+  <div style="padding-left: 200px; padding-right:200px;  padding-top: 20px; font-size: 20px;">
+    <form name="registerform" action="action_page.php" onsubmit="return ValidateForm()" method="post">
+    <div class="container">
+    <label for="uname"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="uname">
+    <br>
+    <label for="date"><b>Date</b></label>
+    <br>
+    <input type="test" placeholder="Enter Date as DD/MM/YY" name="date">
+    <br>
+    <label for="time"><b>Time</b></label>
+    <br>
+    <input type="text" placeholder="Enter Time as HH:MM" name="time">
+    <br>
+    <label for="email"><b>E-mail ID</b></label>
+    <input type="text" placeholder="Enter E-mail" name="email">
+    <br>
+    <label for="phone"><b>Phone Number</b></label>
+    <input type="text" placeholder="Enter Phone Number" name="phone">
+    <br>
+    <button type="submit">Book</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+<!--   <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div> -->
+</form>
+  </div>
+
+  <footer>
+        <p> IG:@poodakdhaba<br>
+         <a href="mailto:poodakdhaba@gmail.com">poodakdhaba@gmail.com</a></p>
+    </footer>
+</body>
+</html>

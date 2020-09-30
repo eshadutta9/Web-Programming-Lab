@@ -1,0 +1,111 @@
+
+<html>
+<head>
+  <title>Restaurant</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="rest-style.css"> 
+<script type="text/javascript">
+function ValidateForm() {
+
+  //Check Name
+  var n = document.forms["registerform"]["name"].value;
+  if (n == "") {
+    alert("Name must be filled out!");
+    return false;
+  }
+
+  var ph = document.forms["registerform"]["phone"].value;
+  re_phone = /^[0-9]{10}$/;
+  if(!ph.match(re_phone)) {
+    alert("Invalid Phone Number");
+    return false;
+  }
+
+  var e = document.forms["registerform"]["email"].value;
+  re_email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if(!e.match(re_email)) {
+    alert("Invalid E-mail ID!");
+    return false;
+  }
+
+  var n = document.forms["registerform"]["uname"].value;
+  if (n == "") {
+    alert("Username must be filled out!");
+    return false;
+  }
+
+  var p1 = document.forms["registerform"]["psw1"].value;
+  var p2 = document.forms["registerform"]["psw2"].value;
+  if(p1 != p2) {
+    alert("Passwords do not match!");
+    return false;
+  }
+  var re = /^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+  if(!p1.match(re)) {
+    alert("Password is too weak. Must be of length 8 including at least one alphabet, one digit, and one special character!");
+    return false;
+  }
+
+
+}
+</script>
+</head>
+<body class="bgcolor">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header bg-light">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="rest.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="bookasguest.html">Book Table as Guest</a></li>
+        <li><a href="login.html">Log In</a></li>
+    </ul>
+  </div>
+</nav>
+    <div class="header">
+      <img src="media/chef's kiss gif.gif" class="gif1">
+      <img src="media/chef's kiss gif.gif" class="gif2">
+
+    <h1 class="h1">poo da</h1>
+    <h1 class="h2">k - dhaba</h1>
+  </div>
+  <div>
+    <h1 style="text-align: center;">Register:</h1>
+  </div>
+  <div style="padding-left: 200px; padding-right: 200px; padding-top: 20px; font-size: 20px;">
+    <form name="registerform" action="action_page.php" onsubmit="ValidateForm()" method="post">
+  <div class="container">
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name">
+    <br>
+    <label for="phone"><b>Phone Number</b></label>
+    <input type="text" placeholder="Enter Phone Number" name="phone">
+    <br>
+    <label for="emailid"><b>Phone E-mail ID</b></label>
+    <input type="text" placeholder="Enter E-mail ID" name="email">
+    <br>
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname">
+    <br>
+    <label for="psw1"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw1">
+    <br>
+    <label for="psw2"><b>Password</b></label>
+    <input type="password" placeholder="Confirm Password" name="psw2">
+    <br>
+    <button type="submit">Register</button>
+
+  </div>
+</form>
+  </div>
+
+  <footer>
+        <p> IG:@poodakdhaba<br>
+         <a href="mailto:poodakdhaba@gmail.com">poodakdhaba@gmail.com</a></p>
+    </footer>
+</body>
+</html>
